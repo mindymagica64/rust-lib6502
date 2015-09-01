@@ -17,7 +17,7 @@ mod lib6502 {
 	}
 
 	impl CPU {
-		fn loadBytes(&mut self, data) {
+		fn load_bytes(&mut self, data) {
 			std::slice::bytes::copy_memory(&data[..], &env.memory.rom[..]);
 			env.registers.program_counter = (env.memory.read(WithAddress(0xfffd)) as Address) << 8 | (env.memory.read(WithAddress(0xfffc)) as Address);
 		}
