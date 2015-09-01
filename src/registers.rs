@@ -2,7 +2,7 @@ use lib6502::types;
 
 
 mod lib6502 {
-	struct Registers {
+	pub struct Registers {
 		sp: Address,
 		prg_counter: Address,
 		acc: Byte,
@@ -33,12 +33,12 @@ mod lib6502 {
 		}
 	}
 
-	enum StatusOps {
+	pub enum StatusOps {
 		Set,
 		Clear
 	}
 
-	enum StatusFlags{
+	pub enum StatusFlags{
 		Carry = 1;
 		Zero = 1 << 1;
 		Interrupt = 1 << 2;

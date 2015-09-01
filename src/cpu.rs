@@ -5,12 +5,12 @@ use lib6502::Core;
 
 mod lib6502 {
 
-	struct Environment {
+	pub struct Environment {
 		registers: Registers,
 		memory: Memory
 	}
 
-	struct CPU {
+	pub struct CPU {
 		env: Environment,
 		interactive: false,
 		finished: false,

@@ -2,7 +2,7 @@ use lib6502::types;
 
 mod lib6502{
 
-	enum MemoryModes {
+	pub enum MemoryModes {
 		WithAddress(Address),
 		WithUpperAndLower(Byte, Byte)
 	}
