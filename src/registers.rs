@@ -24,7 +24,7 @@ mod lib6502 {
 		}
 
 		impl Registers {
-			fn update_status<F>(&mut self, status_op: StatusOps, flag: StatusFlags) {
+			fn update_status(&mut self, status_op: StatusOps, flag: StatusFlags) {
 				match status_op {
 					StatusOps::Set => status = status | flag,
 					StatusOps::Clear => status = status & ~flag;
