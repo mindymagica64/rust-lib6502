@@ -9,14 +9,22 @@ mod lib6502 {
 			let opcode = env.memory.read(MemoryModes::WithAddress(env.registers.program_counter));
 			env.registers.program_counter += 1;
 			match opcode {
-				Opcodes::ADCImmediate => env.registers.program_counter += 1; Instructions::ADC(address_calculators::Immediate, env),
-				Opcodes::ADCZeroPage => env.registers.program_counter += 1; Instructions::ADC(address_calculators::ZeroPage, env),
-				Opcodes::ADCZeroPageX => env.registers.program_counter += 1; Instructions::ADC(address_calculators::ZeroPageX, env),
-				Opcodes::ADCAbsolute => env.registers.program_counter += 2; Instructions::ADC(address_calculators::Absolute, env),
-				Opcodes::ADCAbsoluteX => env.registers.program_counter += 2; Instructions::ADC(address_calculators::AbsoluteX, env),
-				Opcodes::ADCAbsoluteY => env.registers.program_counter += 2; Instructions::ADC(address_calculators::AbsoluteY, env),
-				Opcodes::ADCIndirectX => env.registers.program_counter += 1; Instructions::ADC(address_calculators::IndirectX, env),
-				Opcodes::ADCIndirectY => env.registers.program_counter += 1; Instructions::ADC(address_calculators::IndirectY, env),
+				Opcodes::ADCImmediate => env.registers.program_counter += 1; instructions::ADC(address_calculators::Immediate, env),
+				Opcodes::ADCZeroPage => env.registers.program_counter += 1; instructions::ADC(address_calculators::ZeroPage, env),
+				Opcodes::ADCZeroPageX => env.registers.program_counter += 1; instructions::ADC(address_calculators::ZeroPageX, env),
+				Opcodes::ADCAbsolute => env.registers.program_counter += 2; instructions::ADC(address_calculators::Absolute, env),
+				Opcodes::ADCAbsoluteX => env.registers.program_counter += 2; instructions::ADC(address_calculators::AbsoluteX, env),
+				Opcodes::ADCAbsoluteY => env.registers.program_counter += 2; instructions::ADC(address_calculators::AbsoluteY, env),
+				Opcodes::ADCIndirectX => env.registers.program_counter += 1; instructions::ADC(address_calculators::IndirectX, env),
+				Opcodes::ADCIndirectY => env.registers.program_counter += 1; instructions::ADC(address_calculators::IndirectY, env),
+				Opcodes::ANDImmediate => env.registers.program_counter += 1; instructions::AND(address_calculators::Immediate, env),
+				Opcodes::ANDZeroPage => env.registers.program_counter += 1; instructions::AND(address_calculators::ZeroPage, env),
+				Opcodes::ANDZeroPageX => env.registers.program_counter += 1; instructions::AND(address_calculators::ZeroPageX, env),
+				Opcodes::ANDAbsolute => env.registers.program_counter += 2; instructions::AND(address_calculators::Absolute, env),
+				Opcodes::ANDAbsoluteX => env.registers.program_counter += 2; instructions::AND(address_calculators::AbsoluteX, env),
+				Opcodes::ANDAbsoluteY => env.registers.program_counter += 2; instructions::AND(address_calculators::AbsoluteY, env),
+				Opcodes::ANDIndirectX => env.registers.program_counter += 1; instructions::AND(address_calculators::IndirectX, env),
+				Opcodes::ANDIndirectY => env.registers.program_counter += 1; instructions::AND(address_calculators::IndirectY, env),
 			}
 		}
 		
